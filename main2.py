@@ -38,7 +38,7 @@ def search_courses(query, top_k=5):
 
 def main():
     # Streamlit interface
-    st.title("🌟 Smart Course Search 🔎")
+    st.title("Smart Course Search")
     st.markdown(
         """
         ### Find the Most Relevant Free Courses on Analytics Vidhya
@@ -50,22 +50,22 @@ def main():
     query = st.text_input("Enter your search query:")
 
     if query:
-        st.markdown(f"### Showing results for: *'{query}'* 📜")
+        st.markdown(f"### Showing results for: *'{query}'* ")
         results = search_courses(query)
         for result in results:
             st.markdown("---")
             st.markdown(f"## {result['title']}")
-            st.markdown(f"**📗 Description:**")
+            st.markdown(f"** Description:**")
             st.markdown(result['description'])
             
             # Course Curriculum Section
             if 'Course curriculum' in result:
-                st.markdown("### 📙 Course Curriculum:")
+                st.markdown("### Course Curriculum:")
                 st.markdown(result['Course curriculum'])
             
             # About the Instructor Section
             if 'About the Instructor' in result:
-                st.markdown("### 👨‍🏫 About the Instructor:")
+                st.markdown("### About the Instructor:")
                 st.write(result['About the Instructor'])
 
             # Adding a button to enroll or learn more about the course
